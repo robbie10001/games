@@ -1,11 +1,18 @@
 import React from 'react'
+import './answer.css'
 
 function Answer(props) {
+    let classes = ["answer"];
+    if (props.selected) {
+        classes.push('selected')
+    }
 
     return (
-        <button value={props.letter} >
-            <span>{props.letter}.</span> 
-            {props.answer}
+        <button 
+            className="buttonContainer" 
+            value={props.letter} 
+            onClick={props.handleClick}>
+            <span>{props.letter}.</span> {props.answer}
         </button>
 
 
